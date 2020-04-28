@@ -1,4 +1,4 @@
-module "mongodb" {
+module "rds-mysql" {
   source          = "git::https://chandralekha882:Opcqa123!@github.com/chandralek/modules.git//rds-mysql"
   VPC_ID          = data.terraform_remote_state.VPC.outputs.VPC_ID
   MGMT_VPC_ID     = data.terraform_remote_state.VPC.outputs.MGMT_VPC_ID
