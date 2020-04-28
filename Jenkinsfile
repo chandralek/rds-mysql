@@ -7,6 +7,7 @@ pipeline{
 
   environment {
             RDS = credentials('RDS-MYSQL-PASS-DEV')
+            GIT_LAB_CRED = credentials('GIT_LAB_CRED')
           }
 
 
@@ -29,7 +30,7 @@ pipeline{
               }
               steps{
                 sh '''
-                  terraform apply -auto-approve -var DBUSER=${RDS_USR} -var DBPASS=${RDS_PSW}
+                  terraform apply -auto-approve -var DBUSER=${RDS_USR} -var DBPASS=${RDS_PSW} -var GITLAB_USER=${GIT_LAB_CRED_USR} -var GITLAB_PASSWORD=${GIT_LAB_CRED_PSW}
               '''
               }
             }
@@ -42,7 +43,7 @@ pipeline{
               }
               steps{
                 sh '''
-                  terraform destroy -auto-approve -var DBUSER=${RDS_USR} -var DBPASS=${RDS_PSW}
+                  terraform destroy -auto-approve -var DBUSER=${RDS_USR} -var DBPASS=${RDS_PSW} -var GITLAB_USER=${GIT_LAB_CRED_USR} -var GITLAB_PASSWORD=${GIT_LAB_CRED_PSW}
               '''
               }
             }

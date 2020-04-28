@@ -10,4 +10,6 @@ module "rds-mysql" {
   PROD            = var.PROD
   NONPROD         = var.NONPROD
   TAGS            = var.TAGS
+  GITLAB_USER     = var.GITLAB_USER
+  GITLAB_PASSWORD = var.GITLAB_PASSWORD
 }
