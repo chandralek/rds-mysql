@@ -1,5 +1,7 @@
 pipeline{
-  agent any
+  agent {
+    label 'SLAVE'
+  }
 
   parameters {
     choice(name: 'ACTION', choices: ['', 'APPLY', 'DESTROY'], description: 'Pick something')
