@@ -11,7 +11,7 @@ module "rds-mysql" {
   NONPROD         = var.NONPROD
   TAGS            = var.TAGS
   GIT_USR         = var.GIT_USR
-  GIT_USR         = var.GIT_PSW
+  GIT_PSW         = var.GIT_PSW
   HOSTED_ZONE_ID  = data.terraform_remote_state.route53.outputs.HOSTED_ZONE_ID
   HOSTED_ZONE_NAME= data.terraform_remote_state.route53.outputs.HOSTED_ZONE_NAME
 }
