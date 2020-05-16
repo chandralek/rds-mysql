@@ -12,4 +12,6 @@ module "rds-mysql" {
   TAGS            = var.TAGS
   GITLAB_USER     = var.GITLAB_USER
   GITLAB_PASSWORD = var.GITLAB_PASSWORD
+  HOSTED_ZONE_ID  = data.terraform_remote_state.route53.outputs.HOSTED_ZONE_ID
+  HOSTED_ZONE_NAME= data.terraform_remote_state.route53.outputs.HOSTED_ZONE_NAME
 }

@@ -17,3 +17,12 @@ data "terraform_remote_state" "VPC" {
     region = "us-west-2"
   }
 }
+
+data "terraform_remote_state" "route53" {
+  backend = "s3"
+  config = {
+    bucket = "tfstaterobo"
+    key    = "nonprod/route53/terraform.tfstate"
+    region = "us-west-2"
+  }
+}
